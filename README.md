@@ -17,7 +17,7 @@ JNI files have to be re-compiled using Java native development kit(NDK).
 * To run it with CLI, JNI module has to be packed as a .jar library, which is already done; however, to run it on Windows 
 with CLI, JNI files have to be re-compiled to a .so file, then the .so file has to be packed as a .jar library to include to.
 
-# Run the test:
+## Run the test:
 There are two ways to run the test; via CLI or an IDE.
 Either way, there are some works to do if it's not used for testing the management server.
 1. For the slave, implement the jobs to perform by inheriting ZombieWorkerBase, a template class.
@@ -30,22 +30,22 @@ Either way, there are some works to do if it's not used for testing the manageme
 7. Contact Peter if you have done everything above, but it's not working.
 
 * CLI:
-For the help meun pass --h or --help.
+For the help meun pass -h.
 
 ```bash
-java -jar jPeter_Slave.jar --h
-java -jar jPeter_Master.jar --help
+java -jar jPeter_Slave.jar -h
+java -jar jPeter_Master.jar -h
 ```
 
 To run a slave pass --p for port number used for communicating with master, port 8887 is used if no argument is passed.
 ```bash
-java -jar jPeter_Slave.jar --p=8888
+java -jar jPeter_Slave.jar -p=8888
 ```
 
-To run a master pass --t for test target, --s for slaves' IP & port, --r for number of reruns, --e for number of workers to end the test,
-and --w for the ratio of works to spawn, this must match the number of types of worker defined in the WorkerTypeDefinition on the slave side.
+To run a master pass -t for test target, -s for slaves' IP & port, -r for number of reruns, -e for number of workers to end the test,
+and -w for the ratio of works to spawn, this must match the number of types of worker defined in the WorkerTypeDefinition on the slave side.
 ```bash
-java -jar jPeter_Master.jar --t=myTargetServerUnderTest.com --s=localhost:8887,localhost:8888,127.2.3.4:8887 --r=1 --e=500 --w=-1:3:2
+java -jar jPeter_Master.jar -t=myTargetServerUnderTest.com -s=localhost:8887,localhost:8888,127.2.3.4:8887 -r=1 -e=500 -w=-1:3:2
 ```
 
 * IDE:
