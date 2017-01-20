@@ -3,7 +3,6 @@ jPeter - Performance Test Tool
 
 ## Intro:
 * jPeter is a performance test tool which spawns worker threads to perform customized jobs and records target's respond times.
-* Jobs customized for testing management server has been implemented and packed into the repository.
 * It comes with CLI which allows execution without installing an IDE.
 * Master-Slave structure is used for distributing jobs onto multiple machines with ease. 
 
@@ -11,23 +10,15 @@ jPeter - Performance Test Tool
 * Java: SDK-7 is recommended. Bear you own risk is any other version is used.
 To install, please refer to: http://www.wikihow.com/Install-Oracle-Java-on-Ubuntu-Linux
 
-* A Java native interface(JNI) module used in it is compiled specifically for Linux based systems. To run it on Windows, 
-JNI files have to be re-compiled using Java native development kit(NDK).
-
-* To run it with CLI, JNI module has to be packed as a .jar library, which is already done; however, to run it on Windows 
-with CLI, JNI files have to be re-compiled to a .so file, then the .so file has to be packed as a .jar library to include to.
-
 ## Run the test:
 There are two ways to run the test; via CLI or an IDE.
-Either way, there are some works to do if it's not used for testing the management server.
-1. For the slave, implement the jobs to perform by inheriting ZombieWorkerBase, a template class.
-2. For the slave, modify the types of worker to spawn in the ZombieFactory.
+Either way, there are some works to do before it can be used.
+
+1. For the slave, implement the jobs to perform by inheriting CountDownWorkerBase, a template class.
+2. For the slave, modify the types of worker to spawn in the WorkerFactory.
 3. For the slave, define the constant strings according to the worker types implemented in WorkerTypeDefinition.
-3. For the slave, modify the constant strings in RespondTimeDefinition according to the jobs implemented.
-4. For the slave and master, modify the constant strings in JSONKeyDefinition according to the info that will be shipped.
-5. For the slave, modify the keys used for wrapping result into a JSONObject, they should be those defined in step 3 & 4.
-6. For the master, modify the keys used for extracting results received from slaves.
-7. Contact Peter if you have done everything above, but it's not working.
+3. For the slave and the master, modify the constant strings in RespondTimeDefinition according to the jobs implemented and the info that will be shipped.
+4. Contact Peter if you have done everything above, but it's not working.
 
 * CLI:
 For the help meun pass -h.
