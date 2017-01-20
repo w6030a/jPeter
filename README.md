@@ -17,8 +17,8 @@ Either way, there are some works to do before it can be used.
 1. For the slave, implement the jobs to perform by inheriting CountDownWorkerBase, a template class.
 2. For the slave, modify the types of worker to spawn in the WorkerFactory.
 3. For the slave, define the constant strings according to the worker types implemented in WorkerTypeDefinition.
-3. For the slave and the master, modify the constant strings in RespondTimeDefinition according to the jobs implemented and the info that will be shipped.
-4. Contact Peter if you have done everything above, but it's not working.
+4. For the slave and the master, modify the constant strings in RespondTimeDefinition according to the jobs implemented and the info that will be shipped.
+5. Contact Peter if you have done everything above, but it's not working.
 
 * CLI:
 For the help meun pass -h.
